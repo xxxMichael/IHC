@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +12,7 @@ body {
 }
 
 .container {
-  background: #f5f1e9;
+  background: #ECE8E0;
   max-width: 1200px;
   margin: 20px auto;
   border-radius: 20px;
@@ -24,14 +24,14 @@ body {
 }
 
 .main-header {
-  background: #ece8e0;
+  background: #ECE8E0;
   border-radius: 16px;
   padding: 16px 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 8px; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .logo-titulo {
@@ -44,7 +44,7 @@ body {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background: #fff;
+  background: #ECE8E0;
   object-fit: cover;
   border: 2px solid #3a6c71;
 }
@@ -77,15 +77,34 @@ body {
   color: #a25d40;
   font-weight: bold;
   cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  padding: 6px 22px;
+  border-radius: 28px;
+  background: transparent;
+}
+
+.main-nav li:hover,
+.main-nav li.active {
+  background: #386C71;
+  color: #fff;
 }
 
 .icon.mascota::before {
-  content: "🐾";
+  content: "";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  display: inline-block;
+}
+.icon.mascota i {
   font-size: 22px;
 }
-
 .icon.donaciones::before {
-  content: "💰";
+  content: "";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  display: inline-block;
+}
+.icon.donaciones i {
   font-size: 22px;
 }
 
@@ -102,7 +121,7 @@ body {
 }
 
 .btn-compania:hover {
-  background: #295357;
+  background: #3E8F97;
 }
 
 .galeria-mascotas {
@@ -114,10 +133,20 @@ body {
   align-items: center;
 }
 
+.imagenes-mensaje-superior {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 70px;
+}
+
 .imagenes-superiores {
   display: flex;
   gap: 24px;
-  margin-bottom: 16px;
+  width: 100%;
+  justify-content: center;
 }
 
 .imagenes-superiores img {
@@ -125,7 +154,16 @@ body {
   height: 180px;
   object-fit: cover;
   border-radius: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+.imagenes-superiores .img-central {
+  width: 220px;
+  /* Más pequeña */
+  height: 220px;
+  align-self: flex-end;
+  /* Opcional: para alinearla abajo */
+  object-fit: cover;
 }
 
 .mensaje-central {
@@ -136,6 +174,26 @@ body {
   margin: 18px 0 30px 0;
   font-style: italic;
   font-weight: 500;
+}
+
+.mensaje-central-superpuesto {
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  background: #ece8e0;
+  border-radius: 32px 32px 0px 0px;
+  padding: 22px 38px 12px 38px;
+  font-family: 'Kreon', serif;
+  font-size: 24px;
+  color: #a25d40;
+  text-align: center;
+  font-style: italic;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  min-width: 420px;
+  z-index: 2;
+  border-top: 4px solid #f5f1e9;
 }
 
 .tarjetas-mascotas {
@@ -150,7 +208,7 @@ body {
 .tarjeta-mascota {
   background: #fff;
   border-radius: 18px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   width: 230px;
   display: flex;
   flex-direction: column;
@@ -161,7 +219,7 @@ body {
 
 .tarjeta-mascota:hover {
   transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 8px 24px rgba(56,108,113,0.10);
+  box-shadow: 0 8px 24px rgba(56, 108, 113, 0.10);
 }
 
 .tarjeta-mascota img {
@@ -202,7 +260,7 @@ body {
 }
 
 .btn-adoptar:hover {
-  background: #295357;
+  background: #3E8F97;
 }
 
 .main-footer {
@@ -223,6 +281,7 @@ body {
   .tarjetas-mascotas {
     grid-template-columns: repeat(3, 1fr);
   }
+
   .imagenes-superiores img {
     width: 180px;
     height: 130px;
@@ -233,17 +292,31 @@ body {
   .container {
     padding: 12px 4px 0 4px;
   }
+
   .main-header {
     flex-direction: column;
     gap: 16px;
     padding: 12px 8px;
   }
+
   .imagenes-superiores {
     gap: 10px;
   }
+
   .tarjetas-mascotas {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+  }
+
+  .imagenes-superiores img {
+    width: 120px;
+    height: 90px;
+  }
+
+  .mensaje-central-superpuesto {
+    font-size: 16px;
+    min-width: 220px;
+    padding: 12px 10px 8px 10px;
   }
 }
 
@@ -252,14 +325,17 @@ body {
     width: 100px;
     height: 70px;
   }
+
   .tarjeta-mascota {
     width: 95vw;
     max-width: 320px;
   }
+
   .tarjetas-mascotas {
     grid-template-columns: 1fr;
     gap: 12px;
   }
+
   .main-footer {
     font-size: 15px;
     padding: 12px 8px;
