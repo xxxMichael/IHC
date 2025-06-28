@@ -1,0 +1,267 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #3a6c71;
+  font-family: 'Inter', Arial, sans-serif;
+  color: #384848;
+}
+
+.container {
+  background: #f5f1e9;
+  max-width: 1200px;
+  margin: 20px auto;
+  border-radius: 20px;
+  padding: 24px 32px 0 32px;
+  box-shadow: 0 0 0 8px #3a6c71;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-header {
+  background: #ece8e0;
+  border-radius: 16px;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.logo-titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #fff;
+  object-fit: cover;
+  border: 2px solid #3a6c71;
+}
+
+.titulo {
+  font-family: 'Kreon', serif;
+  font-size: 20px;
+  color: #a25d40;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+}
+
+.main-nav li {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 18px;
+  color: #a25d40;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.icon.mascota::before {
+  content: "🐾";
+  font-size: 22px;
+}
+
+.icon.donaciones::before {
+  content: "💰";
+  font-size: 22px;
+}
+
+.btn-compania {
+  background: #3a6c71;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-compania:hover {
+  background: #295357;
+}
+
+.galeria-mascotas {
+  background: #f5f1e9;
+  border-radius: 16px;
+  padding: 24px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagenes-superiores {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 16px;
+}
+
+.imagenes-superiores img {
+  width: 220px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+}
+
+.mensaje-central {
+  font-family: 'Kreon', serif;
+  font-size: 24px;
+  color: #a25d40;
+  text-align: center;
+  margin: 18px 0 30px 0;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.tarjetas-mascotas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  width: 100%;
+  justify-items: center;
+  margin-bottom: 32px;
+}
+
+.tarjeta-mascota {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  width: 230px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 12px 18px 12px;
+  transition: transform 0.15s;
+}
+
+.tarjeta-mascota:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(56,108,113,0.10);
+}
+
+.tarjeta-mascota img {
+  width: 200px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 10px;
+}
+
+.info-mascota {
+  text-align: center;
+}
+
+.info-mascota strong {
+  font-size: 18px;
+  color: #386c71;
+  font-family: 'Kreon', serif;
+  font-weight: bold;
+}
+
+.info-mascota p {
+  font-size: 14px;
+  color: #384848;
+  margin: 8px 0 14px 0;
+}
+
+.btn-adoptar {
+  background: #386c71;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 8px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.btn-adoptar:hover {
+  background: #295357;
+}
+
+.main-footer {
+  background: #3a6c71;
+  color: #fff;
+  text-align: left;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 0 16px 16px;
+  padding: 18px 32px;
+  margin-top: auto;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .tarjetas-mascotas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .imagenes-superiores img {
+    width: 180px;
+    height: 130px;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    padding: 12px 4px 0 4px;
+  }
+  .main-header {
+    flex-direction: column;
+    gap: 16px;
+    padding: 12px 8px;
+  }
+  .imagenes-superiores {
+    gap: 10px;
+  }
+  .tarjetas-mascotas {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .imagenes-superiores img {
+    width: 100px;
+    height: 70px;
+  }
+  .tarjeta-mascota {
+    width: 95vw;
+    max-width: 320px;
+  }
+  .tarjetas-mascotas {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .main-footer {
+    font-size: 15px;
+    padding: 12px 8px;
+  }
+}
